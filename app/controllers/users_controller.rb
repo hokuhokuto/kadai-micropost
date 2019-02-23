@@ -39,7 +39,7 @@ before_action :require_user_logged_in, only: [:index, :show, :followings, :follo
     counts(@user)
   end
   
-  def favorite_posts
+  def likes
     @user = User.find(params[:id])
     @microposts = @user.favorite_posts.page(params[:page])
   end
